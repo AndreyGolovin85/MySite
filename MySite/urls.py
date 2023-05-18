@@ -21,5 +21,6 @@ from service import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home)
+    path('login/', views.home, name='login'),
+    path('register/', views.register, name='register'),
 ]
