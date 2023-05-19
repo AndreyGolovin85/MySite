@@ -125,5 +125,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+AUTH_USER_MODEL = 'service.User'
+
 # Для поля "birth_date" устанавливаем минимальный возраст
 USER_MIN_AGE = 9
