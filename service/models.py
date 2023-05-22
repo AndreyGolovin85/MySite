@@ -29,9 +29,6 @@ class UserRoles:
 
 
 class User(AbstractUser):
-    class Meta:
-        verbose_name = "Пользователь"
-        verbose_name_plural = "Пользователи"
 
     first_name = models.CharField(verbose_name="Имя", max_length=100)
     last_name = models.CharField(verbose_name="Фамилия", max_length=100)
@@ -40,6 +37,10 @@ class User(AbstractUser):
     age = models.PositiveIntegerField(verbose_name="Возраст", null=True)
     birth_date = models.DateField(verbose_name="Дата рождения", max_length=10, validators=[birth_date_validator])
     email = models.EmailField(verbose_name="Электронная почта", max_length=50, unique=True)
+
+    class Meta:
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
 
     def __str__(self):
         return self.username
