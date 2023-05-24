@@ -11,7 +11,8 @@
         <main>
             <div>
                 <div>
-                    <form method="post">
+                    <form method="post" action="postuser/">
+                        {% csrf_token %}
                         <fieldset>
                             <legend>Авторизация</legend>
                                 <p>

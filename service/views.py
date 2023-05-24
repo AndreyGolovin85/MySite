@@ -3,10 +3,11 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 
 from service.models import User
+from service.permissions import PermissionPolicyMixin
 from service.serializer import UserSerializers
 
 
-class UserViewSet(ModelViewSet):
+class UserViewSet(PermissionPolicyMixin, ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializers
     permission_classes_per_method = {
@@ -18,7 +19,7 @@ class UserViewSet(ModelViewSet):
     }
 
 
-def home(request):
+def index(request):
     return render(request, "index.html")
 
 

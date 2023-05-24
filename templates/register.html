@@ -13,32 +13,33 @@
             Регистрируясь на сайте, вы принимаете все <a href="">правила и законы сайта</a><br/>
             Незнание законов сайта не освобождает вас от ответственности!<br/>
         </p>
-        <form method="post">
-        <fieldset>
-            <legend>Регистрация</legend>
-                <p class="_pxs">
-                    <label>Email:</label>
-                    <input/>
-                </p>
-                <p class="_pxs">
-                    <label>Пароль:</label>
-                    <input/>
-                </p>
-                <p class="_pxs">
-                    <label>Имя персонажа:</label>
-                    <input/>
-                </p>
-                <p class="_pxs">
-                    <label>Пол:</label>
-                    <select>
-                        <option>парень</option>
-                        <option>девушка</option>
-                    </select>
-                </p>
-                <p class="_pxs">
-                    <input type="submit" name="submit" value="Вход"/>
-                </p>
-        </fieldset>
+        <form method="post" action="create">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Регистрация</legend>
+                    <p class="_pxs">
+                        <label>Email:</label>
+                        <input/>
+                    </p>
+                    <p class="_pxs">
+                        <label>Пароль:</label>
+                        <input/>
+                    </p>
+                    <p class="_pxs">
+                        <label>Имя персонажа:</label>
+                        <input/>
+                    </p>
+                    <p class="_pxs">
+                        <label>Пол:</label>
+                        <select>
+                            <option>парень</option>
+                            <option>девушка</option>
+                        </select>
+                    </p>
+                    <p class="_pxs">
+                        <input type="submit" name="submit" value="Вход"/>
+                    </p>
+            </fieldset>
         </form>
         <p>
             Все поля обязательны для заполнения!<br/>
@@ -50,7 +51,7 @@
     <footer>
         <ul>
             <li>
-                <a href="{% url 'login' %}">Вход на сайт</a>
+                <a href="{% url 'index' %}">Вход на сайт</a>
             </li>
         </ul>
     </footer>
